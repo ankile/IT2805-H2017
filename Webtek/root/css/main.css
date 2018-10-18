@@ -1,0 +1,647 @@
+/*
+FILENAME: main.css
+WRITTEN BY: Anders, Martin, Mathias, Mats, Lars
+WHEN: November 2017
+PURPOSE: Style the website */
+
+
+/* -- Start universal styling -- */
+/* Make background a little off-white for a more pleasureable viewving experience */
+body {
+  background-color: #f8f8f8;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 720px;
+  padding: 15px;
+  margin-bottom: 50px;
+}
+
+/* Center and change font of headers */
+.header {
+  text-transform: uppercase;
+  font-family: 'Verdana', serif;
+  color: #6f6f6f;
+}
+
+/* Center text */
+.center {
+  text-align: center;
+}
+
+/* Center elements */
+.auto-margin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Start of link styling */
+a:link {
+  color: #ff9400;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ff9400;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/* End of link styling */
+
+/* Make paragraph text a little bigger */
+p {
+  font-size: 1.1em;
+}
+
+/* Makes a shadow that creates a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #f9f9f9;
+  border-radius: 2px;
+}
+
+/* Start of grid system */
+.row::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.col-2 {width: 16%;}
+.col-3 {width: 24%;}
+.col-4 {width: 32.33%;}
+.col-5 {width:40.67%;}
+.col-6 {width: 49%;}
+.col-7 {width: 57.33%;}
+.col-8 {width: 65.66%;}
+.col-10 {width: 83%;}
+
+[class*="col-"] {
+  float: left;
+}
+
+@media screen and (max-width:700px) {
+  [class*="col-"]:not(.no-break) {
+       width: 100%;
+   }
+}
+/* End grid system */
+
+/* Used for floating things to the right */
+.right {
+  float: right;
+}
+
+/* Used for floating elements to the left */
+.left {
+  float:left;
+}
+
+/* Styles the horisontal ruler */
+hr {
+  height: 1px;
+  background-color: #ff9400;
+  border: none;
+}
+
+/* Styling for the button that scrolls to the top */
+#top-button {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 10px; /* Place the button at the bottom of the page */
+  right: 20px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  height: 60px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  font-size: 16px;
+  background-color: #ff9400;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Change button style on hover */
+input[type=submit]:hover {
+  background-color: #ef8b00;
+  //box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Width and padding of the form container */
+.forms {
+  max-width: 380px;
+  padding: 0px 18px 15px;
+}
+
+/* Make sure the spacing around the form is correct */
+#forms {
+  padding: 20px 40px 10px 10px;
+}
+
+/* Add some padding tp p tags in the contact form */
+#forms-div p {
+  padding: 10px;
+}
+
+/* Sets form labels to Verdana to fit the rest of the site */
+#forms label {
+  font-family: verdana;
+}
+
+/* -- End universal style -- */
+
+
+/* -- Start styling navbar -- */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: right;
+}
+
+.navbar li a, #logo-li-text {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  font-family: Verdana, sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+#navbar li:nth-child(2) {
+  margin-right: 3%;
+}
+
+ul#navbar a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  background-color: #ff9400;
+  color:white;
+}
+
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+  right: 3%;
+  background-color: white;
+}
+
+.dropdown-button {
+  color: black;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-align: left;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+#logo-image {
+  height: 47px;
+  margin-top: 2px;
+  margin-left: 10px;
+}
+
+#logo-link {
+  margin: 0;
+  margin-left: 5px;
+  padding: 0;
+}
+
+#logo-title:hover {
+  background-color: #f3f3f3;
+}
+
+@media screen and (max-width: 750px) {
+  #logo-li-text {
+    display: none;
+  }
+}
+
+/* -- End of navbar -- */
+
+/*-- Start style mer_blogg.html -- */
+/* Style for blog post objects */
+.blogpost {
+  width: auto;
+  max-width: 70%;
+    margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.thumbnail{
+    cursor: pointer;
+    height: 100px;
+    width: auto;
+}
+
+/* -- End  mer_blogg.html -- */
+
+/* Start style for pop-ups/ bilde_edit.js */
+/* From w3school tutorial */
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+/* Sentrerer bildet */
+#imageView{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* -- End thumbnails/ bilde_edit.js -- */
+
+
+/* -- Start styling rom.html -- */
+
+.content {
+  margin-top: 50px;
+  padding: 0px 40px 40px 40px;
+}
+.content p {
+  padding-right: 10px;
+}
+.row{
+    margin-bottom: 20px;
+}
+.topptekst {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px 50px 0px 50px;
+}
+
+.pris {
+  font-size: 1.3em;
+  color: white;
+  background-color: #ff9400;
+  max-width: 150px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+
+.pris:link {
+    color: white;
+}
+
+.pris:visited {
+    color: white;
+}
+
+.rom {
+  padding-bottom: 20px;
+}
+
+/* -- End rom.html -- */
+
+
+/* -- Start styling mer_om_oss.html -- */
+.main-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px;
+}
+button.accordion {
+  width: 100%;
+  background-color: #ccc;
+  text-align: left;
+  border: none;
+  padding: 15px;
+  margin: 5px;
+  font-size: 18px;
+  cursor:pointer;
+}
+
+.svar {
+  display: none;
+  padding: 5px 10px 5px 10px;
+}
+.questions {
+  clear: both;
+  padding: 5px;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #e2e2e2;
+}
+/* Bruker unicode karakteren for plus (+)-tegn og (-)-tegn */
+/* Den vil være pluss før den trykkes, og når den er active (åpen) vil det gi et minustegn */
+button.accordion:after {
+  content: '\02795';
+  float: right;
+}
+button.accordion.active:after {
+  content: "\2796";
+}
+
+/* Setter bildet og teksten sin bredde til å være 100% om sidens bredde er mindre enn 850px */
+@media screen and (max-width: 850px) {
+  .picture, .OmOss {
+       width: 100%;
+   }
+}
+
+/* Sizing of the map */
+#map {
+  width: 98%;
+  height: 400px;
+}
+
+/* -- End mer_om_oss.html -- */
+
+
+/* -- Start style mer_kontakt.html -- */
+
+/* Sizing of the contact info card */
+#contact-info {
+  max-width: 380px;
+  margin-top: 30px;
+  height: 145px;
+  padding: 0px 18px 15px;
+}
+
+/* Correct spacing between rows in contact card */
+div#contact-info div {
+  margin-bottom: -30px;
+}
+
+/* Style all input fields */
+input[type=text], input[type=email], select, textarea, input[type=date] {
+  width: 100%;
+  padding: 12px;
+  resize: vertical;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin: 6px 0 16px;
+}
+
+/* Make required fields orange to indicate requiredness */
+input:required, textarea:required {
+  border: 1px solid #ff9400;
+}
+
+/* Valid input turns the fields green */
+form input:valid, form textarea:valid {
+  border: 1px solid #dfffaf;
+}
+
+/* Make the explainatory text in the form the correct size */
+.ps {
+  font-size: 11px;
+}
+
+/* -- End mer_kontakt.html -- */
+
+
+/* -- Start style footer -- */
+footer {
+  background-color: #333;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+footer p {
+  color: #bbb;
+  margin: 0 0 10px;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+#footer-container {
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+#footer-container-liten-skrift, #footer-container {
+  max-width: 700px;
+}
+
+#liten-skrift {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 630px) {
+  .col-3 {
+    width: 100%;
+  }
+}
+
+.sticky {
+  position: absolute;
+  bottom: 0;
+}
+/* -- End footer -- */
+
+
+/* -- Start bestilling.html -- */
+#total {
+  font-size: 16px;
+  border: 1px solid #ff9400;
+  color: black;
+  padding: 12px 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: #ff9400; 
+}
+
+
+/* -- End bestilling.html -- */
+
+/* -- Start index.html -- */
+@media screen and (max-width: 1300px) {
+  #divContent {
+    width: 683px;
+  }
+}
+
+.navArrows {
+  position: absolute;
+  height: inherit;
+  top: 0px;
+  width: 20%;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+#divLeft {
+  left: 0px;
+}
+
+#divRight {
+  right: 0px;
+}
+
+#divLeft:hover {
+  background-image: url(../img/left_arrow.svg);
+  background-color: black;
+  opacity: 0.3;
+}
+
+#divRight:hover {
+  right: 0px;
+  background-image: url(../img/right_arrow.svg);
+  background-color: black;
+  opacity: 0.3;
+}
+
+#canvas {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+
+#divSlideshow {
+  position: relative;
+  width: 683px;
+  height: 455px;
+}
+
+.imgNode {
+  position: relative;
+  display: inline-block;
+  background-color: #ededed;
+  opacity: 0.3;
+  cursor: pointer;
+  width: 8%;
+  padding-top: 8%;
+  margin: 0 3%;
+  border-radius: 50%;
+  /*border-style: solid;
+  border-width: 1px;
+  border-color: #6b6b6b;*/
+}
+
+.selectedNode {
+  opacity: 0.8;
+}
+
+#nodeContainer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 50px;
+  width: 30%;
+  margin: 0 35%;
+  text-align: center;
+}
+
+#txtContent {
+  position: relative;
+  margin-left: 50px;
+  max-width: 500px;
+  width: 500px;
+}
+
+#divContent {
+  max-width: 1400px;
+  padding-left: 30px;
+  padding-top: 50px;
+}
+
+.btnBig {
+  display: inline-block;
+  max-width: none;
+  width: inherit;
+  font-size: 1.7em;
+  padding: 20px 0;
+  margin-top: 20px;
+  font-family: 'Verdana', serif;
+}
+
+/* -- End index.html -- */
+
+/* -- Start mer_omtaler.html -- */
+.omtaleHeader {
+  background-color: #ff9400;
+  font-family: 'Verdana', serif;
+  color: white;
+  padding: 10px;
+}
+.omtaleText {
+  padding: 0px 10px 20px 10px;
+}
+.omtaleInput {
+  border: 1px solid #ccc;
+}
+.omtaleInput:focus {
+  outline-color: #ff9400;
+}
+#omtaleContainer {
+  margin: 2%;
+  width: 96%;
+}
+#txtInnhold {
+  overflow-y: scroll;
+  width: 96%;
+  min-height: 60px;
+  max-height: 600px;
+}
+#txtNavn {
+  width: 150px;
+}
+#btnPubliser {
+  position: relative;
+  float: right;
+  font-size: 16px;
+  background-color: #ff9400;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#btnPubliser:hover {
+    background-color: #ef8b00;
+}
+
+/* -- End mer_omtaler.html -- */

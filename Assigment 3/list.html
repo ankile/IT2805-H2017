@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A list apart</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      footer {
+        width: 100%;
+        background-color: black;
+      }
+      .wrapper {
+        padding: 20px 20px 50px;
+        min-height: 100%;
+        margin: 0 auto -50px;
+      }
+      .footer,
+      .push {
+        height: 50px;
+      }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <h1>This is a list</h1>
+      <p>Click the button to add enough content to test the footer</p>
+      <p><button id="add">Add Content</button></p>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS</li>
+          <ul>
+            <li>LESS</li>
+            <li>Sass</li>
+            <li>SCSS</li>
+          </ul>
+      </ul>
+      <ul>
+        <li>JavaScript</li>
+        <ul>
+          <li>React</li>
+          <li>Node</li>
+          <li>jQuery</li>
+          <li>AngularJS</li>
+          <li>Backbone</li>
+          <li>Ember</li>
+          <li>Babel</li>
+        </ul>
+      </ul>
+    </div>
+    <footer class="footer"></footer>
+  </body>
+  <script>
+      $("#add").on("click", function() {
+        $("<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>").appendTo(".wrapper");
+      });
+  </script>
+</html>

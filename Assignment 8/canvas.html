@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas</title>
+  </head>
+  <body>
+
+    <canvas id="chart" width="700" height="550"></canvas>
+
+    <script>
+      const canvas = document.getElementById('chart');
+      const context = canvas.getContext('2d');
+
+      function drawBar(amount, color, x) {
+        let y = 550;
+        let width = 100;
+        let height = -50 * (amount / 100000);
+        context.fillStyle = color;
+        context.fillRect(x, y, width, height);
+      }
+
+      drawBar(750000, 'red', 100);
+      drawBar(300000, 'blue', 210);
+      drawBar(10000000, 'green', 320);
+
+    </script>
+
+  </body>
+</html>

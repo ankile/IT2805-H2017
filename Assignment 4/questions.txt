@@ -1,0 +1,23 @@
+1. The OS or web browser in mobile phones are intentionally made to not auto
+load and play video content because such content requires a lot of bandwidth and
+there's a big chance that mobile users use the cellular network to browse the
+internet. It's a measure to reduce cellular usage for phone users.
+
+2. 320 x 568 resolution means that the device width is 320px, which means that
+it's narrower than the requirement of being max 1024px, but not narrower than
+the requirement of it being a minimum of 768px in width, and since it says "and"
+in between the two conditions, both conditions must evaluate to true for the
+query to kick in and the snippet ends up doing nothing.
+
+3. If you use a single, responsive website, you only need to write your content
+once, and just change the appearance of the existing HTML according to what
+device happens to be used to browse your site at any given time. Of course,
+there is some kinds of web pages that might require a dedicated mobile site
+because of some advanced functionality or need, but for the scope of this
+subject, it's always better to adhere to the DRY-rule and don't repeat yourself
+in writing the same content, just for a mobile version of the same site. Also,
+with the responsive method, you can write the site to be mobile-first, aka to be
+styled first to be optimal on a phone, and have media queries make it optimal
+for desktop, which will make the site load faster on mobile. This is desirable
+because people who browse on phones often are out and about, and in a rush, and
+browsing using a cellular connection.

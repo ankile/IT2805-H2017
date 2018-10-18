@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slideshow</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
+    </head>
+    <body onload="ShowImages()">
+        <div id="divSlideshow">
+            <div id="divLeft" onclick="dirRight = false; diff = -1; clearTimeout(timeout); ShowImages()"></div>
+            <canvas id="canvas" width="300px" height="300px"></canvas>
+            <div id="divRight" onclick="diff = 1; clearTimeout(timeout); ShowImages()"></div>
+            <div id="nodeContainer"></div>
+        </div>
+        
+        
+        <script type="text/javascript">
+            const canvas = document.getElementById('canvas')
+            const context = canvas.getContext('2d');
+            
+            const imgLeft = new Image();
+            const imgRight = new Image();
+            var imgLeftPos = -imgLeft.width;
+            var imgRightPos = parseInt(canvas.width);
+            
+            const animSpeed = 15;
+            
+            function SlideRight(imgLeftSrc, imgRightSrc) {
+                imgLeft.src = imgLeftSrc;
+                /*imgLeft.width = parseInt(canvas.width);
+                imgLeft.height = parseInt(canvas.height);*/
+                imgRight.src = imgRightSrc;
+                /*imgRight.width = parseInt(canvas.width);
+                imgRight.height = parseInt(canvas.height);*/
+                
+                imgLeftPos = -parseInt(canvas.width);
+                imgRightPos = 0;
+                
+                window.requestAnimationFrame(AnimateRight);
+            }
+            function SlideLeft(imgLeftSrc, imgRightSrc) {
+                imgLeft.src = imgLeftSrc;
+                /*imgLeft.width = parseInt(canvas.width);
+                imgLeft.height = parseInt(canvas.height);*/
+                imgRight.src = imgRightSrc;
+                /*imgRight.width = parseInt(canvas.width);
+                imgRight.height = parseInt(canvas.height);*/
+                
+                imgLeftPos = 0;
+                imgRightPos = parseInt(canvas.width);
+                
+                window.requestAnimationFrame(AnimateLeft);
+            }
+
+            function AnimateRight() {
+                if(imgLeftPos < 0) {
+                    context.clearRect(0, 0, 300, 300);
+                
+                    context.drawImage(imgLeft, imgLeftPos, 0, parseInt(canvas.width), parseInt(canvas.height));
+                    context.drawImage(imgRight, imgRightPos, 0, parseInt(canvas.width), parseInt(canvas.height));
+
+                    imgLeftPos += animSpeed;
+                    imgRightPos += animSpeed;
+                    
+                    window.requestAnimationFrame(AnimateRight);
+                }
+                else {
+                    context.drawImage(imgLeft, 0, 0, parseInt(canvas.width), parseInt(canvas.height));
+                }
+            }
+            function AnimateLeft() {
+                if(imgLeftPos >= -parseInt(canvas.width)) {
+                    context.clearRect(0, 0, 300, 300);
+                
+                    context.drawImage(imgLeft, imgLeftPos, 0, parseInt(canvas.width), parseInt(canvas.height));
+                    context.drawImage(imgRight, imgRightPos, 0, parseInt(canvas.width), parseInt(canvas.height));
+
+                    imgLeftPos -= animSpeed;
+                    imgRightPos -= animSpeed;
+                    
+                    window.requestAnimationFrame(AnimateLeft);
+                }
+                else {
+                    context.drawImage(imgRight, 0, 0, parseInt(canvas.width), parseInt(canvas.height));
+                }
+            }
+            function ShowImage(img) {
+                var image = new Image();
+                image.src = img;
+                //context.clearRect(0, 0, parseInt(canvas.width), parseInt(canvas.height));
+                context.drawImage(image, 0, 0, parseInt(canvas.width), parseInt(canvas.height));
+                timeout = setTimeout(ShowImages, 3000);
+            }
+            
+            /////////////////////////
+            
+            const images = ["Media/BilBakfra.jpg", "Media/DypeDal.jpg", "Media/karte-wuerzburg.png", "Media/Petter_Dass_i_Melhus.jpg", "Media/VeiOrg.jpg"]
+            var curImg = 0;
+            var timeout = null;
+            var diff = 1;
+            var dirRight = true;
+
+            function ShowImages()
+            {
+                prevImg = curImg;
+                curImg += diff;
+                if(curImg + 1 > images.length){
+                    curImg = 0;
+                }
+                else if (curImg < 0){
+                    curImg = images.length - 1;
+                }
+                if(dirRight) {
+                    SlideRight(images[curImg], images[prevImg]);
+                }
+                else {
+                    SlideLeft(images[prevImg], images[curImg]);
+                }
+                diff = 1;
+                timeout = setTimeout(ShowImages, 3000);
+                
+                dirRight = true;
+            }
+            function IncCurImg () {
+                if(curImg + 1 >= images.length){
+                    curImg = 0;
+                }
+                else{
+                    curImg++;
+                }
+            }
+            function DecCurImg () {
+                if(curImg <= 0){
+                    curImg = images.length - 1;
+                }
+                else{
+                    curImg -= 2;
+                }
+            }
+            function InitImgNodes() {
+                var container = document.getElementById("nodeContainer");
+                for(var i = 0; i < images.length; i++) {
+                    var divNode = document.createElement("div");
+                    divNode.classList.add("imgNode");
+                    divNode.value = i;
+                    divNode.addEventListener("click", function (event) {
+                        clearTimeout(timeout);
+                        var newImg = event.target.value;
+                        ShowImage(images[newImg]);
+                        curImg = newImg;
+                    });
+                    container.appendChild(divNode);
+                }
+            }
+            InitImgNodes();
+        </script>
+    </body>
+</html>

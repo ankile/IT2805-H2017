@@ -1,0 +1,21 @@
+Questions
+
+1. The inline styling will override the external style sheet because the browser
+   loads the page top to bottom, line for line, and since the external sheet
+   is linked in the head section of the page that is loaded before any inline
+   styling. If a new rule appears that conflicts with an existing one, the new
+   overwrites the old one.
+
+2. Classes should be used when it's being used on something that appears
+   multiple times, whilst id should be used when there's something unique that
+   needs some identification.
+
+3. RGBA stands for Red, Green, Blue and Alpha, and is a way of describing color,
+   plus an extra alpha channel used for deciding wether the color should be
+   transparent or not.
+
+4. The CSS file should be in the head section because that way it'll load before
+   the rest of the actual page, and that way the background-color will appear
+   first, and when the text and pictures load, the styling already ready.
+
+5. article p

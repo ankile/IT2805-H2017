@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Omtaler</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="Stylesheet.css" />
+    </head>
+    <body onload="VisTilfeldigeOmtaler()">
+        <h1>Omtaler</h1>
+        <textarea id="txtInnhold"></textarea>
+        <br>
+        <input id="txtNavn" type="text" />
+        <input id="btnPubliser" type="button" value="Publiser" onclick="NyOmtale()" />
+        <br>
+        <br>
+        <div id="divOmtaler"></div>
+        
+        <script type="text/javascript" src="omtaler.js"></script>
+        <script type="text/javascript">
+            var Omtale = function (navn, innhold) {
+                this.navn = navn || "ANONYM";
+                this.innhold = innhold;
+            }
+            const omtaler = [new Omtale("Alexander Fritjof", "asdf df sd asdf sdf df df."), new Omtale("Turid Steffen", "lasdk sdd ssdjf hsddjf!"), new Omtale("Ingolf Philip", "asdfj djfh ksd jfh df sk."), new Omtale("Erlend Ester", "lalal aslele fdasfdsf.")];
+            
+            function NyOmtale() {
+                var navn = document.getElementById("txtNavn").value;
+                var innhold = document.getElementById("txtInnhold").value;
+                if(innhold != "") {
+                    VisOmtale(new Omtale(navn, innhold));
+                }
+            }
+            function VisOmtale(omtale) {
+                var beholder = document.getElementById("divOmtaler");
+                
+                var divOmtale = document.createElement("div");
+                divOmtale.classList.add("omtale");
+                var h2Navn = document.createElement("h2");
+                h2Navn.innerText = omtale.navn;
+                divOmtale.appendChild(h2Navn);
+                var br = document.createElement("br");
+                divOmtale.appendChild(br);
+                var pInnhold = document.createElement("p");
+                pInnhold.innerText = omtale.innhold;
+                divOmtale.appendChild(pInnhold);
+                beholder.insertBefore(br, beholder.firstChild);
+                beholder.insertBefore(divOmtale, beholder.firstChild);
+            }
+            function VisTilfeldigeOmtaler() {
+                var valgteOmtaler = [];
+                while(valgteOmtaler.length < omtaler.length) {
+                    var curTilfeldig = omtaler[Math.floor(Math.random() * omtaler.length)];
+                    if(!valgteOmtaler.includes(curTilfeldig)) {
+                        valgteOmtaler.push(curTilfeldig);
+                        VisOmtale(curTilfeldig);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

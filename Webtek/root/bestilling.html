@@ -1,0 +1,122 @@
+<!--
+FILE NAME: bestilling.html
+WRITTEN BY: Anders Bergesen
+WHEN:  6.11
+PURPOSE: Page for booking of a hostel room -->
+
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <title>Bestilling</title>
+    <meta charset="utf-8" />
+    <!-- Import the stylesheet and the favicon -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- Placeholder for the navbar -->
+    <div id="navbar_content"></div>
+
+    <!-- Start of content -->
+    <h1 class="header center">Bestilling</h1>
+
+    <!--Div for containing the content of the page  -->
+    <div class="container auto-margin">
+      <!-- Div for forms -->
+      <div id="forms-div" class="forms card auto-margin">
+        <form id="forms" action="bekreftelse.html" method="get">
+
+          <!-- Inputs for hostel choices -->
+          <label for = "fradato">
+            Hvilken dag ønsker du å ankomme?<br><br>
+            <input type="date" id="fradato" required>
+          </label><br><br>
+
+          <!-- Duration of stay -->
+          <label for="dager">Hvor mange netter?</label>
+            <input type="text" id="dager" value="1" oninput="totalbelop()">
+          <br/>
+
+          <!-- How many people -->
+          <label for="personer">Antall personer:</label>
+            <input type="text" id="personer" value="1" oninput="totalbelop()">
+          <br>
+
+          <!-- A bed in the 4-man room -->
+          <label for= "rom4">
+            Velg seng:<br><br>
+            Enkeltseng i 4 mannsrom (199,-)<input type="radio" name="romtype" id="rom4" value="rom4" checked onchange="totalbelop()">  <br>
+          </label>
+
+          <!-- A bed in the 2-man room -->
+          <label for="rom2">
+            Enkeltseng i 2 mannsrom (249,-)<input type="radio" name="romtype" id="rom2" value="rom2" onchange="totalbelop()"> <br><br>
+          </label>
+
+          <!-- Option button for breakfast -->
+          <label for="frokost">
+            Ønkser du frokost? (50,-)
+            <input type="checkbox" class="check" name="frokost" id="frokost" onchange="totalbelop()"><br><br>
+          </label>
+
+          <!-- Here is the sum -->
+          <label for="total">Totalbeløp:
+            <input type="text" id="total" value="199,-" disabled>
+          </label><br><br>
+
+          <!-- Personal information -->
+          <label for= "navn">
+            Fult navn:<br>
+            <input type="text" id="navn" name="navn" placeholder="Ditt fulle navn" required><br>
+          </label>
+
+          <label for= "tlf">
+            Telefon:<br>
+            <input type="text" id="tlf" name="tlf" placeholder="Ditt telefonnummer" required pattern="[0-9]{8}"><br>
+          </label>
+
+          <label for= "email">
+            E-postadresse:<br>
+            <input type="email" id="email" name="email" placeholder="Din e-postadresse" required><br>
+          </label>
+
+          <label for= "gate">
+            Adresse:<br>
+            <input type="text" id="gate" name="adresse" placeholder="Gatenavn og nummer" required><br>
+          </label>
+
+          <label for= "postkode">
+            Postnummer:<br>
+            <input type="text" id="postkode" name="adresse" placeholder="Postnummer / ZIP" required pattern="[0-9]{4}"><br>
+          </label>
+
+          <label for= "sted">
+            Sted:<br>
+            <input type="text" id="sted" name="adresse" placeholder="Sted" required><br><br>
+          </label>
+
+          <!-- Submit button -->
+          <label for= "submit">
+            <input type="submit" id="submit" value="Betal">
+          </label>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- Placeholder for footer -->
+    <div id="footer_content"></div>
+
+    <!-- Create the image button for scrolling to the top -->
+    <img src="img/up_arrow.ico" onclick="topFunction()" id="top-button" alt="Top-button">
+
+    <!-- Importerer scriptene -->
+    <script src="js/include.js"></script>
+    <script src="js/scroll_to_top.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/active_update.js"></script>
+    <script src="js/bestilling.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+#rom {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.content {
+  margin-top: 50px;
+  padding: 0px 40px 40px 40px;
+}
+.content p {
+  padding-right: 10px;
+}
+.topptekst {
+  max-width: 600px;
+  margin: auto;
+  padding: 50px;
+  margin-bottom: -30px;
+}
+
+#pris {
+  font-size: 1.3em;
+  background-color: #ff9400;
+  max-width: 150px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}

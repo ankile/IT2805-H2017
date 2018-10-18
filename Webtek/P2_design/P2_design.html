@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>P2 Krav og spesifikasjoner</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body onscroll="makeSticky()" id="home">
+
+      <header>
+        <div class="header">
+          <h1>P2 Krav og spesifikasjoner</h1>
+          <h2 id="navn">Anders, Lars, Martin, Mathias and Mats</h2>
+          <h3 id="date">Oktober 9. 2017</h3>
+        </div>
+      </header>
+
+      <div id="navbar">
+        <a href="#home">Hjem</a>
+        <a href="#s1">Dokumentdetaljer</a>
+        <a href="#s2">Administrativedetaljer</a>
+        <a href="#s3">Mål, mening og publikum</a>
+        <a href="#s4">Navigasjon</a>
+        <a href="#s5">Universelle designvalg</a>
+        <a href="#s6">Innhold</a>
+        <a href="#s7">Minimumskrav</a>
+        <a href="#s8">Plan</a>
+      </div>
+      <article>
+          <section id="s1">
+              <h2>Dokumentdetaljer</h2>
+              <p>P2 krav og spesifikasjoner</p>
+                <p>Mathias, Martin, Anders, Lars og Mats</p>
+                <p>IT2805, October 9 2017</p>
+          </section>
+          <section id="s2">
+              <h2>Administrative detaljer</h2>
+              <p>Klient: Stig Fjell og Trondheim Youth Hostel</p>
+              <p>Nettside: Trondheim Youth Hostel</p>
+              <p>Kontakt: Stig Fjell, daglig leder (fiksjonell)</p>
+          </section>
+          <section id="s3">
+              <h2>Mål, mening og publikum</h2>
+              <p>Stig Fjell som er daglig leder for Trondheim Youth Hostel ønsker en nettside for unge reisende som leter etter et moderne og billigere alternativ, i et land som domineres av rike eldre reisende. Det unge publikum er sosiale og frie mennesker som vil ha et samlingspunkt for andre yngre reisende i Trondheim. Formålet med nettsiden vil være at flere reisende på nett skal finne hostellet, da de fleste yngre reisende finner deres neste reisemål på nett. Nettsiden vil reklamere et moderne, hipt og billig hostel som egner seg for alle, men spesielt yngre reisende som besøker Trøndelag.</p>
+          </section>
+
+          <section id="s4">
+            <h2>Navigasjon</h2>
+            <img src="images/navstructure1.png" alt="Navigation structure">
+
+            <p>Siden vi vil ha en åpen og enkel løsning vil alle sidene være koblet sammen gjennom navigasjonsbaren øverst på siden som er tilgjengelig på alle sidene. En komplisert nettside med flere sider inni hverandre vil distrahere publikummet fra å bruke penger. Vi vil helst ikke at paranoide reisere skal lete desperat etter det som står med “liten skrift”.
+</p>
+            <p>Det eneste unntak fra den åpne løsningen forekommer til bekreftelse/kvitteringen som du kun kommer deg til fra betalingssiden. Kvitteringen selv har derimot navigasjonsbaren og vil kunne linke til resten av sidene.</p>
+            <p>Under kan du se enda en illustrasjon som viser hvordan navigeringen kan ligne en clique, igjen med unntak av bekreftelsessiden.</p>
+            <img src="images/navstructure2.png" alt="Navigation structure">
+          </section>
+          <section id="s5">
+              <h2>Universelle designvalg</h2>
+              <p>Lyse farger for det ungdommelig publikum. Header er lys/ mørkegrå, bakgrunn er hvit med svart tekst. Siden man er inne på til ethvert øyeblikk blir vist ved at bakgrunnen på knappen som linker til den siden er oransje. Det kommer også til å være visse andre detaljer i den samme oransje fargen. Grunnen til at vi har valgt oransje er vi føler det er en farge som kombinerer varmen og energien i det røde, og lykken, nysgjerrigheten og lekenheten i det gule, som til sammen gir oransje som passer perfekt mot vår eventyrlystne og drevne målgruppe. Skygger og border har vi styrt unna fordi det bare gjør siden mindre oversiktlig og mindre minimalistisk.</p>
+              <p>Til tekst er fontene “Times New Roman” og “Verdana” valgt. Times i brødtekst og Verdana i overskrifter og navigasjonen. Verdana er valgt fordi den ser fin ut og det er en ren og enkel tekst som er veldig leselig i store bokstaver. Times er valgt fordi vi synes den gjør brødtekst godt leselig, og den er vanlig å bruke i brødtekst, spesielt i ting som skoleoppgaver, som er noe målgruppen er vant med. I tillegg er den en fin kontrast til Verdanas helt rette kanter og sider, og skaper et bedre samspill på siden.</p>
+              <p>Tekststørrelsen er jevnt over ganske stor. Vi ønsker ikke nedlesse siden med mye info. Vi ønsker mye heller å gjøre det som er viktig veldig tydelig, og gjøre det enkelt å finne den informasjonen en ung reisende søker. Dette betyr helt spesifikt at overskriften på forsiden blir ca 60px, og brødteksten blir ca 25px, litt avhengig av skjermstørrelse.</p>
+              <p>Navigasjonsbaren vil ha en fast posisjon øverst på siden. Når man scroller nedover vil navbaren lime seg til toppen av vinduet, slik at den alltid er tilgjengelig.</p>
+              <p>Sidens footer vil befinne seg helt nederst til enhver tid. Om det ikke er nok innhold til å “dytte” den helt ned, vil den fortsatt oppholde seg nederst. Hvis det er nok, derimot, vil den bli dyttet ned, og først komme til syne når man scroller ned. Den kommer til å være svart med hvit tekst. Dette er gjort fordi vi mener den på den måten markerer tydelig slutten på siden, og gir en fin kontrast til resten av siden. Samtidig er den et sekundært element på siden, siden den fungerer litt som en bunntekst og vi ikke ønsker at den skal trekke så mye oppmerksomhet. Likevel gir den hvite teksten god lesbarhet, om man skulle ønske å lese informasjonen. I tillegg til kontaktinfo og adresse vil linker til sosiale medier i form av deres ikoner befinne seg her.</p>
+              <img src="images/generisk.jpg" alt="Designvalg">
+          <section id="s6">
+              <h2>Innhold</h2>
+              <ol>
+                <li>
+                  <p>hjem.html</p>
+                  <p>Forsiden vil ha en begrenset mengde med innhold. Vi ønsker at det skal være kort vei for kundene fra de kommer inn på siden til de har bestilt rom. Derfor vil hovedsiden kun inneholde et slideshow, en kort tekst og en "book nå"-knapp. Disse tre tingene skal vises uten at brukeren skal trenge å scrolle nedover. Dersom kunden er interessert i mer info, kan brukeren benytte seg av navigasjonsbaren øverst på siden, som har lokale linker.
+</p>
+                  <p>Slideshowet vil bli det mest dominerende elementet på siden, og vil vise diverse bilder som skal virke lokkende for kunden. Bilder av rom, mat, hostelet, osv. En kort skryte-beskrivelse av hostelet vil ligge ved siden av slideshowet, og under begge elementene det skal det være en knapp som lar bruker gå rett til bestilling. Siden vi har en relativt ung målgruppe som kun ønsker et billig rom for et par netter, ønsker vi at det skal være meget enkelt å gå rett til betalingen.</p>
+                  <img src="images/forside.jpg" alt="Forside">
+                </li>
+                <li>
+                  <p>Bestilling.html</p>
+                  <p>Bestillingssiden vil være noe forenklet. Den vil spørre kunden om hvilke datoer en ønsker å reservere, hvor mange personer, hva slags romtype og om man ønsker frokost inkludert i prisen. Siden vil da regne ut beløpet og oppdatere prisen for kunden til høyre på siden. Under dette vil siden be kunden skrive navn, epost og telefonnummer. Nederst på siden vil det være en knapp med "Betal". I stedet for å sende brukeren over til en side hvor man utfører bestillingen, ønsker vi at man blir sendt til en ny side som forteller brukeren at betalingen er registrert.</p>
+                  <img src="images/bestill1.jpg" alt="Bestilling">
+                  <img src="images/bestill2.jpg" alt="Bestilling">
+                </li>
+                <li>
+                  <p>Bekrefetelse.html</p>
+                  <p>En side som vil gi brukeren brukeren en bekreftelse på at betaling er mottatt. Siden vil også gi kunden et referansenummer og en beskjed om at en bekreftelse har blitt sendt på epost.</p>
+                  <img src="images/bekreftelse.jpg" alt="Bekreftelse">
+                </li>
+                <li>
+                  <p>Rom.html</p>
+                  <p>“Rom”-siden skal vise bilder av rommene som Trondheim Youth Hostel har å tilby. Det skal også gi en forklaring på rommet, med størrelse og hva rommet har å tilby, samt gi en pris for leie. </p>
+                  <p>Bildene skal flytes mot høyre og tekst skal ligge på venstre side av bildet. Hvert rom har sin egen overskrift, som følger det universelle designet og fargevalget.</p>
+                  <img src="images/vårerom.png" alt="Vårerom">
+                </li>
+                <li>
+                  <p>mer_om_oss.html</p>
+                  <p>“Om oss”-siden vil gi en kort introduksjon om hva Trondheim Youth Hostel er og hvor det ligger, sammen med mer informasjon som kan være nødvendig.</p>
+                  <p>Vi legger også ved en FAQ like under den korte introduksjonen, slik at brukere kan få svar på spørsmål som ofte blir stilt uten å måtte selv ta kontakt.</p>
+                  <p>Denne siden vil la gjester og potensielle gjester få svar på generelle spørsmål, og mer innsikt i hva det er Trondheim Youth Hostel kan tilby. </p>
+                  <p>Siden vil ha et enkelt design i samme stil som det universelle designet, og det vil legge ved et bilde av Trondheim Youth Hostel sett fra gateplan. Bildet skal flyte mot venstre, og teksten til høyre. FAQ-delen nederst skal gjennom javascript skape et stilrent design, som viser svaret til et spørsmål kun når en bruker klikker på det. Dette vil gjøre nettsiden ryddig og oversiktlig.</p>
+                  <img src="images/om oss.jpg" alt="om oss">
+                </li>
+                <li>
+                  <p>mer_anmeldelser.html</p>
+                  <p>Nettsiden “Anmeldelser” vil være dedikert for at kunder kan legge igjen anmeldelser etter besøk. Dette vil fungere som en betryggende veileder for potensielle kunder, og selv om det kan komme noen negative omtaler vil det i det minste være mulig for mottakeren å lese kommentarene for å vurdere om dette betyr noe for dem. Det er nok ikke mange folk som tør å bestille hotell nå til dags helt blindt uten å se noen anmeldelser, så denne nettsiden vil være essensiell for å lokke kunder.
+Anmeldelsene vil presenteres i en kolonne av innrammede bokser som er midtstilt på siden, og helt på toppen vil det være et felt dedikert for at brukere skal kunne legge inn nye anmeldelser.
+</p>
+                <img src="images/Omtaler.jpg" alt="Omtaler">
+                </li>
+                <li>
+                  <p>mer_kontakt_oss.html</p>
+                  <p>I nettsiden “Kontakt oss” vil det lett tilgjengelig finnes informasjon om hvordan man kan kontakte bedriftsledelsen. Dette i form av mobilnummer, email og hotellets adresse. For brukernes bekvemmelighet kan det tilføyes en link som viser lokasjonen bedre på google maps, og det kan også implementeres en måte å sende email direkte fra denne siden. Innholdet vil være midtstilt, og innsendingsskjemaet vil bestå av forskjellige inputbokser hvor forklaringstekst og submitknapp er oransje for å følge temaet.
+                    <img src="images/kontakt_oss3.jpg" alt="Kontakt oss">
+</p>
+                </li>
+                <li>
+                  <p>mer_blog.html</p>
+                  <p>Bloggen er til for at et samfunn skal kunne utbre seg rundt hostellet og for at de som har besøkt vil kunne ha minner om oppholdet og potensielt kunne ønske seg i større grad tilbake. Bloggen er også god reklame for nye gjester, da vi kan vise den varme tilhørigheten hostellet tilbyr gjennom dagligdagse historier og karakterer fra hostellet.</p>
+                  <p>Kommentarer til innleggene er også ønskelige da gamle gjester kan komme og gi sine egne utdypninger fra deres opplevelser rundt disse innleggene.
+</p>
+                <p>Strukturen vil være enkel med nyeste innlegg øverst og vært innlegg delt inn i en seksjon med tekst og bilder. Da det vil være flere bilder burde bildene vises som thumbnails i en kollasj som blir forstørret når man klikker på dem. Hvert innlegg starter med overskrift og metadata, bildeserie og tekst.
+</p>
+              <img src="images/mer_blogg.png" alt="blogg">
+                </li>
+                <li>
+<p>mer_om_trondheim.html</p>
+              <p>God reklame for de som vurderer å besøke og god informasjon for de som er på hostellet og ønsker seg en utflukt. Denne siden vil ha artikler om severdigheter, restauranter og opplevelser i nærområdet med linker til respektive sider med mer informasjon. </p>
+              <p>Siden vil være enkelt strukturert med bilder, tekst og linker enkelt koblet sammen i seksjoner. Hver seksjon starter med overskrift og et bilde under til høyre og en tekst under til venstre.</p>
+              <img src="images/mer_om_trondheim.png" alt="">
+              </li>
+              </ol>
+          </section>
+          <section id="s7">
+              <h2>Minimumskrav</h2>
+              <p>Alle populære nettsted nå til dags har noen form for interaksjon til fordel for brukernes bekvemmelighet. For at vårt nettsted også skal ose av profesjonalitet vil følgende javascriptfunksjonaliteter implementeres:</p>
+              <ol>
+                <li>
+                  <p>En javascriptfunksjon som i faste tidsintervall viser et nytt bilde av hotellet på forsiden. Dette slideshowet må ha en fast bestemt rekkefølge, ettersom det skal være mulig for brukeren å navigere seg gjennom bildegalleriet selv enten ved hjelp av sirkulære knapper for hvert bilde nedenfor, eller med pilknapper til høyre og venstre som blar gjennom bildene sekvensielt. Med tanke på målgruppen som skal appelleres til er det viktig at denne funksjonen implementeres, for slideshow er en god måte å gi mye informasjon i form av bilder fremfor mye tekst som ungdommer ikke har konsentrasjonsevne nok til å lese.</p>
+                </li>
+                <li>
+                  <p>En javascriptfunksjon som i nettsiden “FAQ” viser svaret til et spørsmål kun når en bruker klikker på det. Dette vil gjøre nettsiden mye ryddigere og oversiktlig. Den siktede målgruppen vår blir dessuten fort overveldet av store mengder tekst.</p>
+                </li>
+                <li>
+                  <p>En javascriptfunksjon som gjør at nettstedets logo av et lukket hus endres til en animert gif som åpner husets dør når brukeren styrer musepekeren over den.</p>
+                </li>
+                <li>
+                  <p>En javascriptfunksjon som lar brukeren skrive og sende inn egne anmeldelser slik at de vises blant andre falske anmeldelser som potensielt stilles opp i tilfeldig rekkefølge for å styrke illusjonen om at det faktisk lagres noe på en server. </p>
+                </li>
+                <li>
+                  <p>En funksjon som forstørrer bilder når de klikkes og eventuelt dimmer alt annet i bakgrunnen for å sette fokus</p>
+                </li>
+                <li>
+                  <p>En funksjon som automatisk regner sammen summen av bestillingen når du legger til bookinger, og presenterer denne summen før du godkjenner bestillingen.</p>
+                </li>
+                <li>
+                  <p>En funksjon som fester navigasjonsbaren til toppen av vinduet når man scroller nedover, slik at navigasjonen alltid er tilgjengelig.</p>
+                </li>
+              </ol>
+          </section>
+          <section id="s8">
+              <h2>Plan</h2>
+            <p>Oversikt over filer</p>
+            <ul>
+<li>hjem.html</li>
+            <li>rom.html</li>
+<li>bestilling.html</li>
+<li>bekreftelse.html</li>
+<li>mer_kontakt.html</li>
+<li>mer_om_oss.html</li>
+<li>mer_blog.html</li>
+<li>mer_om_trondheim.html</li>
+<li>navbar.html</li>
+<li>footer.html</li>
+<li>/scripts</li>
+<ul>
+<li>slideshow.js</li>
+<li>faq.js</li>
+<li>logo.js</li>
+<li>anmeldelse.js</li>
+  <li>bilde_edit.js</li>
+  <li>sum.js</li>
+</ul>
+<li>/images</li>
+<ul>
+<li>rom1.jpg</li>
+<li>rom2.jpg</li>
+<li>...</li>
+<li>blogg1_bilde1.jpg</li>
+<li>blogg1_bilde2.jpg</li>
+<li>blogg2_bilde1.jpg</li>
+<li>...</li>
+<li>omTrondheim1.jpg</li>
+<li>omTrondheim2.jpg</li>
+<li>...</li>
+<li>stig.jpg</li>
+<li>...</li>
+</ul>
+<li>style.css</li>
+    </ul>
+
+    <table>
+			<thead>
+				<tr>
+					<th> Filnavn </th>
+					<th> Beskrivelse </th>
+					<th> Hovedansvar </th>
+					<th> Deadline </th>
+				</tr>
+
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>hjem.html</td>
+					<td>Hjemmesiden</td>
+					<td>Anders</td>
+					<td>24.10.17</td>
+				</tr>
+				<tr>
+					<td>rom.html</td>
+					<td>Bilder og beskrivelse av rommene</td>
+					<td>Martin</td>
+					<td>25.10.17</td>
+				</tr>
+				<tr>
+					<td>mer_om_oss.html</td>
+					<td>Om hostellet og en kort FAQ</td>
+					<td>Martin</td>
+					<td>25.10.17</td>
+				</tr>
+				<tr>
+					<td>bestilling.html</td>
+					<td>Bestillingsside</td>
+					<td>Anders</td>
+					<td>25.10.17</td>
+				</tr>
+				<tr>
+					<td>bekreftelse.html</td>
+					<td>Bekreftelse på bestilling med detaljer angående valgt bestilling</td>
+					<td>Ander</td>
+					<td>25.10.17</td>
+				</tr>
+				<tr>
+					<td>mer_kontakt.html</td>
+					<td>Info om hvordan kontakte</td>
+					<td>Lars</td>
+					<td>27.10.17</td>
+				</tr>
+				<tr>
+					<td>mer_blog.html</td>
+					<td>Tilbakemeldinger fra tidligere besøkende</td>
+					<td>Mathias</td>
+					<td>27.10.17</td>
+				</tr>
+				<tr>
+					<td>mer_om_trondheim.html</td>
+					<td>Informasjone om Trondheim som by og hva man kan se</td>
+					<td>Mathias</td>
+					<td>28.10.17</td>
+				</tr>
+				<tr>
+					<td>navbar.html</td>
+					<td>Navigasjonen som brukes på tvers av siden</td>
+					<td>Lars</td>
+					<td>28.10.17</td>
+				</tr>
+				<tr>
+					<td>footer.html</td>
+					<td>Footer som bruker på tvers av siden</td>
+					<td>Lars</td>
+					<td>28.10.17</td>
+				</tr>
+				<tr>
+					<td>slideshow.js</td>
+					<td>La flere bilder bevege seg på forsiden til hjemmesiden</td>
+					<td>Mats</td>
+					<td>05.11.17</td>
+				</tr>
+				<tr>
+					<td>faq.js</td>
+					<td>FAQ, svarer til kun et spørsmål</td>
+					<td>Lars</td>
+					<td>05.11.17</td>
+				</tr><tr>
+					<td>logo.js</td>
+					<td>Logoen åpner døra når man styrer musa over den</td>
+					<td>Mats</td>
+					<td>06.11.17</td>
+				</tr>
+				<tr>
+					<td>anmeldelse.js</td>
+					<td>anmeldelser som blir random lagt ut</td>
+					<td>Mats</td>
+					<td>06.11.17</td>
+				</tr>
+				<tr>
+					<td>bilde_edit.js</td>
+					<td>Forstørrer bilder</td>
+					<td>Mats</td>
+					<td>07.11.17</td>
+				</tr>
+        <tr>
+					<td>sum.js</td>
+					<td>Regner summen av bestilling</td>
+					<td>Martin</td>
+					<td>07.11.17</td>
+				</tr>
+        <tr>
+          <td>sticky.js</td>
+          <td>Gjør at navigasjonsbaren holder seg på toppen selv om man scroller nedover</td>
+          <td>Lars</td>
+          <td>06.11.17</td>
+        </tr>
+				<tr>
+					<td>style.css</td>
+					<td>CSS-filen som inneholder all styling for siden</td>
+					<td>Alle</td>
+					<td>11.11.17</td>
+				</tr>
+				<tr>
+					<td>Siste sjekk</td>
+					<td>Sjekke hele filen for feil, javascript og css</td>
+					<td>Alle</td>
+					<td>12.11.17</td>
+				</tr>
+			</tbody>
+
+		</table>
+          </section>
+          <footer>
+              Anders, Lars, Martin, Mathias, Mats
+          </footer>
+      </article>
+      <script src="js/main.js"></script>
+    </body>
+</html>

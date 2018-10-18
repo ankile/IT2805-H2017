@@ -1,0 +1,56 @@
+<!--
+FILE NAME: navbar.html
+WRITTEN BY: Lars Lien Ankile
+WHEN: October/Novemvber 2017
+PURPOSE: Enable easy navigation throughout the site -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>navbar</title>
+    <link rel="stylesheet" href="navbar.css">
+  </head>
+  <body>
+    <div class="navbar" id="myTopnav">
+      <ul id="navbar">
+        <a href="index.html"><div id="logo-title">
+          <li id="logo-li" class="left"><img id="logo-image" src="img/house_closed.png" alt="logo"></li>
+          <li id="logo-li-text" class="left">Trondheim Youth Hostel</li>
+        </div></a>
+
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-button">MER</a>
+          <div class="dropdown-content">
+            <a href="mer_om_oss.html">OM OSS</a>
+            <a href="mer_kontakt.html">KONTAKT</a>
+            <a href="mer_omtaler.html">OMTALER</a>
+            <a href="mer_om_trondheim.html">OM TRONDHEIM</a>
+            <a href="mer_blog.html">BLOGG</a>
+          </div>
+        </li>
+        <li><a href="rom.html">ROM</a></li>
+        <li><a href="bestilling.html">BESTILL</a></li>
+        <li><a href="index.html" class="active">HJEM</a></li>
+        <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></li>
+      </ul>
+    </div>
+
+    <div class="placeholder">
+
+    </div>
+    <script src="js/navbar.js"></script>
+
+    <script type="text/javascript">
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>

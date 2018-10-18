@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+FILE NAME: mer_om_trondheim.html
+WRITTEN BY: Mathias Skotnes
+WHEN: Oktober 2017
+PURPOSE: Holds information about sights and activities in Trondheim, including descriptions, pictures and links to more information
+
+
+Ting som må gjøres
+kommentere alt
+fikse css med positioning (mobilversjon, navbar se trondheim vandrerhjem)
+fikse navbar så den dekker alt
+favicon
+footer
+-->
+<html>
+    <head>
+        <!--Alt dette kan gå i include-->
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon3.png"/>
+        <!--!-->
+        <style>
+            .header{
+                text-align: left;
+            }
+        </style>
+        <title>Om Trondheim</title>
+    </head>
+
+    <body>
+        <!--Overlay med imageView hvor bildet som klikkes på skalerer og vises-->
+        <div id="overlay"><img id="imageView" src=""></div>
+        <div id="navbar_content"></div>
+
+        <div class="sight">
+            <h1 class="header">Nidarosdommen</h1>
+            <p class='strek'>
+            </p>
+            <img class="imgarea card" src="img/nidarosdommen2.jpg" width="300px" height="auto">
+            <div class="textArea">
+                <p>
+                    Maecenas iaculis quam a turpis vulputate ullamcorper. Vestibulum fermentum pharetra felis, at maximus nibh egestas vel. Fusce varius sem id nibh viverra vulputate quis sit amet quam. Proin neque purus, accumsan ut orci et, mollis dictum massa. Aliquam hendrerit mi semper urna malesuada dignissim. Vivamus laoreet quis orci ut iaculis. Aenean ullamcorper aliquam volutpat. Quisque
+                </p>
+                <a target="_blank" href="https://www.pirbadet.no/en/om-pirbadet/opening-hours-and-prices">
+                    Pirbadet åpningstider
+                </a>
+            </div>
+        </div>
+
+        <div class="sight">
+            <h1 class="header">
+                Pirbadet
+            </h1>
+            <p class='strek'>
+            </p>
+            <img class="imgarea card" src="img/pirbadet5.jpg" width="300px" height="auto" style="float: right">
+            <div class="textArea">
+                <p>
+                    Maecenas iaculis quam a turpis vulputate ullamcorper. Vestibulum fermentum pharetra felis, at maximus nibh egestas vel. Fusce varius sem id nibh viverra vulputate quis sit amet quam. Proin neque purus, accumsan ut orci et, mollis dictum massa. Aliquam hendrerit mi semper urna malesuada dignissim. Vivamus laoreet quis orci ut iaculis. Aenean ullamcorper aliquam volutpat. Maecenas iaculis quam a turpis vulputate ullamcorper. Vestibulum fermentum pharetra felis, at maximus nibh egestas vel. Fusce varius sem id nibh viverra vulputate quis sit amet quam. Proin neque purus, accumsan ut orci et, mollis dictum massa. Aliquam hendrerit mi semper urna malesuada dignissim. Vivamus laoreet quis orci ut iaculis. Quisque Aenean ullamcorper aliquam volutpat. Maecenas iaculis quam a turpis vulputate ullamcorper. Vestibulum fermentum pharetra felis, at maximus nibh egestas vel. Fusce varius sem id nibh viverra vulputate quis sit amet quam. Proin neque purus, accumsan ut orci et, mollis dictum massa. Aliquam hendrerit mi semper urna malesuada dignissim. Vivamus laoreet quis orci ut iaculis. Quisque
+                </p>
+                <a target="_blank" href="http://www.nidarosdomen.no/en/opening-hours?view=year">
+                    Nidarosdommen åpningstider
+                </a>
+            </div>
+
+        </div>
+        <!---->
+        <img src="img/up_arrow.ico" onclick="topFunction()" id="top-button">
+
+        <!--Included Script with functions for up arrow-->
+        <script src="js/scroll_to_top.js"></script>
+
+        <!--navbar.js contains the navbar logo code, include.js constains the navbar content etc, active_update highlights chosen site in navbar-->
+        <script src="js/include.js"></script>
+        <script src="js/navbar.js"></script>
+        <script src="js/active_update.js"></script>
+
+        <!--Included Script with functions-->
+        <script type="text/javascript" src="js/bilde_edit.js"></script>
+    </body>
+</html>

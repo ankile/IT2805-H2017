@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tax forms: Bar chart with bars</title>
+  </head>
+  <body>
+
+    <canvas id="chart" width="700" height="550"></canvas>
+    
+    <script>
+      const canvas = document.getElementById('chart');
+      const context = canvas.getContext('2d');
+
+      function drawBar(amount, color, x) {
+        let width = 100;
+        let height = -50 * (amount/100000);
+        context.fillStyle = color; 
+        context.fillRect(x, 550, width, height);
+      }
+
+      drawBar(750000, 'red', 100);
+      drawBar(300000, 'blue', 250);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!--
+FILE NAME: index.html
+WRITTEN BY: Mats Kvelland
+WHEN: Novemvber 2017
+PURPOSE: Home page for the website. -->
+
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8">
+    <!-- Import the stylesheet and the favicon. -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css">
+    <title>Hjem</title>
+  </head>
+
+  <body>
+    <!-- Placeholder for navigation bar with a message if something breaks -->
+    <div id="navbar_content">En feil i lastingen av navigasjonen har forekommet, last siden på nytt.</div>
+
+    <!-- Container div used to center content. -->
+    <div class="row auto-margin" id="divContent">
+      <!-- Div containing the slideshow. -->
+      <div id="divSlideshow" class="col-8">
+        <!-- Canvas to draw the images in the slideshow on. -->
+        <canvas id="canvas" width="683" height="455"></canvas>
+        <!-- Left arrow. -->
+        <div id="divLeft" class="navArrows"></div>
+        <!-- Right arrow. -->
+        <div id="divRight" class="navArrows"></div>
+        <div id="nodeContainer"></div>
+      </div>
+
+      <!-- Div containing the text content. -->
+      <div id="txtContent" class="col-4">
+        <h1 class="header center">TRONDHEIM YOUTH HOSTELL</h1>
+        <p> Velkommen til Trondheim Youth Hostel, ditt førstevalg som ung reisende i Norge. Med gangavstand fra Trondheim sentrum og studentenes møtested Samfundet kunne man ikke håpt på bedre belliggenhet. Vi tilbyr dessuten en rekke valgmuligheter for bestilling av rom slik at du kan tilfredsstille dine behov for en rimelig pris. Våre kunders komfort er til vår største interesse, og derfor er det ansatt et fantastisk rengjøringspersonal som holder det rent i fellesarealet samt ditt eget rom dersom dette ønskes. Book din overnatting i dag: </p>
+        <!-- Button styled link for easy access to the booking page. -->
+        <a href="bestilling.html" class="pris btnBig">BOOK DITT ROM NÅ</a>
+      </div>
+    </div>
+
+
+    <!-- Create the image button for scrolling to the top -->
+    <img src="img/up_arrow.ico" onclick="topFunction()" id="top-button" alt="Top-button">
+
+    <!-- Placeholder for footer -->
+    <div id="footer_content"></div>
+
+    <!-- Import the scripts -->
+    <script src="js/slideshow.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/scroll_to_top.js"></script>
+    <script src="js/active_update.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

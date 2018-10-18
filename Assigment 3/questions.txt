@@ -1,0 +1,10 @@
+1.
+position: fixed makes the element it is applied on stick to a position
+that is relative to the viewport, not any content on the site. For example, a
+navbar with position: fixed, and top: 0, will be glued to the top of the screen,
+regardless of scrolling.
+
+position: absolute is similar to fixed, except it isn't positioned relative to
+the viewport, but rather relative to it's nearest positioned ancestor.
+Positioned means an element that has any other position attribute than the
+static attribute, like for example position: relative or position: fixed.

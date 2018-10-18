@@ -1,0 +1,120 @@
+<!--
+FILE NAME: mer_kontakt.html
+WRITTEN BY: Lars Lien Ankile
+WHEN: October/Novemvber 2017
+PURPOSE: Give the visitor the opportunity to contact the hostel -->
+
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8">
+    <!-- Import the stylesheet and the favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Kontakt oss</title>
+  </head>
+  <body>
+
+    <!-- Placeholder for navigation bar with a message if something breaks -->
+    <div id="navbar_content">En feil har skjedd, vennligst last inn siden på nytt.</div>
+
+    <!-- Div for containing the content of the page -->
+    <div class="container auto-margin">
+      <!-- Page header and subtext to explain the page's purpose -->
+      <h1 class="header center">Kontakt Oss</h1>
+      <p>Om du ikke finner den informasjonen du leter etter på våre sider og heller ikke under vår <a href="mer_om_oss.html">FAQ</a> oppfordrer vi deg å benytte <a href="#contact-form">kontaktskjemaet</a> under, eventuelt kontakte oss direkte:</p>
+
+      <!-- Card with the essential contact info to the hostel -->
+      <div class="card auto-margin" id="contact-info">
+
+        <!-- Row 1 start -->
+        <div class="row">
+          <div class="col-5 no-break">
+            <p>Kontaktperson:</p>
+          </div>
+          <div class="col-7 no-break">
+            <p>Stig Fjell</p>
+          </div>
+        </div>
+        <!-- Row 1 end -->
+        <!-- Row 2 start -->
+        <div class="row">
+          <div class="col-5 no-break">
+            <p>Telefonnummer:</p>
+          </div>
+          <div class="col-7 no-break">
+            <p>+47 912 34 567</p>
+          </div>
+        </div>
+        <!-- Row 2 end -->
+        <!-- Row 3 start -->
+        <div class="row">
+          <div class="col-5 no-break">
+            <p>E-post:</p>
+          </div>
+          <div class="col-7 no-break">
+            <p><a href="mailto:stian@trondheimyouthhostel.no" target="_top">stian@trondheimyouthhostel.no</a></p>
+          </div>
+        </div>
+        <!-- Row 3 end -->
+        <!-- Row 4 start -->
+        <div class="row">
+          <div class="col-5 no-break">
+            <p>Adresse: <br><a target="_blank" href="https://www.google.no/maps/place/Weidemanns+vei+42,+7043+Trondheim/@63.4343273,10.3947243,13.21z/data=!4m5!3m4!1s0x466d31a6d91b8447:0xcfae9433f6a4eada!8m2!3d63.4340183!4d10.4254554">Kart</a></p>
+          </div>
+          <div class="col-7 no-break">
+            <p>Weidemanns vei 41 <br>7043 Trondheim</p>
+          </div>
+        </div>
+        <!-- Row 4 end -->
+
+      </div>
+      <!-- Contact info card end -->
+
+      <!-- Contact form start -->
+      <h2 class="header center" style="margin-top:50px;">Kontaktskjema</h2>
+      <div id="forms-div" class="forms card auto-margin">
+
+        <!-- Start of the form -->
+        <form id="forms" action="#">
+
+          <!-- Field for full name -->
+          <label for="navn">Fullt navn<span class="right ps">Felter med oransje omriss er påkrevd</span></label>
+          <input type="text" name="navn" id="navn" placeholder="Ditt fulle navn" required autofocus>
+
+          <!-- Field for the users email adress -->
+          <label for="email">E-postadresse</label>
+          <input type="email" name="email" id="email" placeholder="Din e-postadresse" required>
+
+          <!-- Ask the user for the subject of their question -->
+          <label for="emne">Emne</label>
+          <input type="text" name="emne" id="emne" placeholder="Hva lurer du på?" required>
+
+          <!-- Ask the user to elaborate a bit more -->
+          <label for="utfyllende-tekst">Fortell mer<span class="right ps"><span id="sign-counter">0</span>/250 tegn</span></label>
+          <textarea name="utfyllende-tekst" id="utfyllende-tekst" rows="8" cols="80" maxlength="250" placeholder="Kan du fortelle i mer detalj hva du lurer på?" required></textarea>
+
+          <!-- Submit button -->
+          <input id="submit" type="submit" name="submit" value="Send">
+        </form>
+      </div>
+
+    </div>
+    <!-- End of container -->
+
+    <!-- Placeholder for footer -->
+    <div id="footer_content"></div>
+
+    <!-- Create the image button for scrolling to the top -->
+    <img src="img/up_arrow.ico" onclick="topFunction()" id="top-button" alt="Top-button">
+
+    <!-- Import the scripts for module includes and functionality -->
+    <script src="js/include.js"></script>
+    <script src="js/scroll_to_top.js"></script>
+    <script src="js/form_submit.js"></script>
+    <script src="js/sign_counter.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/active_update.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

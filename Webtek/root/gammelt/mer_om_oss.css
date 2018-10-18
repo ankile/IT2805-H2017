@@ -1,0 +1,50 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+.main-content {
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+button.accordion {
+  width: 100%;
+  background-color: #ccc;
+  text-align: left;
+  border: none;
+  padding: 15px;
+  margin: 5px;
+  font-size: 18px;
+}
+
+.svar {
+  display: none;
+  padding: 5px 10px 5px 10px;
+}
+.questions {
+  clear: both;
+  padding: 5px;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #e2e2e2;
+}
+/* Bruker unicode karakteren for plus (+)-tegn og (-)-tegn */
+/* Den vil være pluss før den trykkes, og når den er active (åpen) vil det gi et minustegn */
+button.accordion:after {
+  content: '\02795';
+  float: right;
+}
+button.accordion.active:after {
+  content: "\2796";
+}
+
+/*media queries
+@media <media-type> and (expressions) {}
+
+@media screen and (max-width 700px) {
+  Hvis skjermen er større enn 700px så vil den ignorere det som skrives
+  her, men dersom den er 700px eller mindre så vil de fungere.
+}

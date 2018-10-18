@@ -1,0 +1,41 @@
+1.
+To get a 3-dimentional canvas one would use getContext('webgl').
+
+2.
+One must use the arc() function to draw circles. This function takes arguments
+for defining the centre, radius, and arguments for the starting and ending
+angle of the arc. To create a circle one must give it 0 for start angle and
+2*pi for the end angle, because angles are given in radians.
+
+Before one can draw the circle one must start create an empty path with:
+
+context.beginPath();
+
+Then one must choose the color one wants to draw with:
+
+context.fillStyle = 'blue';
+
+Then one tells the program the one wants. A circle at (50, 50), with radius 5
+would be drawn like:
+
+context.arc(50, 50, 5, 0, 2*MATH.PI);
+
+Lastly one draws the circle. If one wants it to be filled one can use:
+
+context.fill();
+
+Or if you want it to be just an outline:
+
+context.stroke();
+
+3.
+The loop could be made more terse using the filter method in a couple of
+different ways. Two of them are given here.
+
+  One way:
+  const countriesStartingWithN = countries.filter(country => country.startsWith('N'));
+
+  Anther Way:
+  const countriesStartingWithN = countries.filter(function (country) {
+    return country.startsWith('N');
+  });

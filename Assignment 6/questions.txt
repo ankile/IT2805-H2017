@@ -1,0 +1,27 @@
+1. For three equals signs to evaluate to true the things must be the same in
+   value and type. Since the expression on the left is an arithmetic operation,
+   and the expression on the right is a floating point number, it won't evaluate
+   to true even though the logic is sound. If it was only two equals signs,
+   however, it would've evaluated to true.
+
+2. The method attribute decides how the information collected in the form should
+   be sent to the server. The attribute can be either POST or GET. If it's set
+   to POST the form data is sent as a separate message. If it's GET the form
+   data is appended to the end of the URL.
+
+3. When GET is used no message body will be sent, so the form data will be
+   converted into a string of key/value pairs which is then appended to the URL,
+   so the information can be transmitted. Since the information appears in plain
+   view it's important to not send sensitive information using the GET method.
+
+4. Never trust the user. Client side validation is easily hackable, and is error
+   prone (e.g. slow or faulty internet connection that leads to JavaScript not
+   loading properly) and could lead to invalid or malicious information to be
+   added to the database. The client side validation is important for ease of
+   use and for the experience of the user, but for the safety of the site's
+   sake one must always have server side validation too.
+
+5. When the form asks for a longer format, free-written piece of text, with less
+   limitations on how long the answer should be. An example could be when
+   leaving a review or using a form to ask a question, one would have <input>s
+   for name and email, and have a <textarea> for the question or review.

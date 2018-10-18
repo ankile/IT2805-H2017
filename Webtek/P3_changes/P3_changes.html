@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <title>P3 Changes</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body onscroll="makeSticky()" id="home">
+
+    <header>
+      <div class="header">
+        <h1>P3 Design Changes</h1>
+        <h2 id="navn">Anders, Lars, Martin, Mathias and Mats</h2>
+        <h3 id="date">13. November 2017</h3>
+      </div>
+    </header>
+
+    <div id="navbar">
+      <a href="#home">Hjem</a>
+      <a href="#s1">Dokumentdetaljer</a>
+      <a href="#s2">Administrative detaljer</a>
+      <a href="#s3">Javascripts</a>
+      <a href="#s4">Modularitet</a>
+      <a href="#s5">Endringer</a>
+      <a href="#s6">Endelig arbeidsfordeling</a>
+    </div>
+    
+    <article>
+      <h2 style ="font-size:2em">P3 Design Changes</h2>
+      <section id="s1">
+        <h2>Dokumentdetaljer</h2>
+        <p>P3 Design changes</p>
+        <p>Mathias, Martin, Anders, Lars og Mats</p>
+        <p>IT2805, 13. November 2017</p>
+      </section>
+      <section id="s2">
+        <h2>Administrative detaljer</h2>
+        <p>Klient: Stig Fjell og Trondheim Youth Hostel</p>
+        <p>Nettside: Trondheim Youth Hostel</p>
+        <p>Kontakt: Stig Fjell, daglig leder (fiksjonell)</p>
+        <p>Link til nettsiden: <a target="_blank" href="http://folk.ntnu.no/larslank/Documents/TYH/index.html">KLIKK HER</a></p>
+      </section>
+      <section id="s3">
+        <h2>Javascript</h2>
+          <h3>Martin</h3>
+          <p>Fullførte sine krav ved å implementere funksjonen accordion.js som toglet mellom display “none” og “block” ettersom spørsmålstypen var active eller ikke. Den vises i mer_om_oss.html ved “ofte stilte spørsmål”. Lagde map.js som viser til google maps og plassering i mer_om_oss.html.</p>
+
+          <h3>Mathias</h3>
+          <p>Fullførte sine krav ved å implementere funksjonen thumbnails.js (tidligere bilde_edit.js) med funksjonene off() og on() som slår av og på et overlay i blog.html som presenterer bildet som klikkes.</p>
+
+          <h3>Mats</h3>
+          <p>I javascriptet “slideshow.js” ble det implementert en rekke funksjoner som er nødvendig for å få slideshowet til å fungere. Først og fremst er det deklarert noen globale variabler som blant annet arrayen med bildene som skal vises, og “curImg” som inneholder indexen til bildet som foreløpig vises. Funksjonen “ShowImages()” kaller seg selv på et fast intervall som tilsvarer tiden mellom hvert nye bilde som vises automatisk i slideshowet, og den holder styr på å øke eller redusere “curImg” samt å vise det foreløpige bildet. For å implementere selve “sliden” i slideshowet ble det laget funksjonene “AnimateLeft()” og “AnimateRight()” som bruker canvas-animering til å skape en glidende overgang fra det foreløpige bildet til det neste eller forrige. Ettersom det kan være slitsomt å måtte bla igjennom hvert bilde for å se det som man ønsker ble det implementert funksjonen “InitImgNodes()” som automatisk lager sirkulære knapper avhengig av hvor mange bilder det er i arrayen som viser hvilket bilde som vises i tillegg til at de kan trykkes for å gå til ønsket bilde.
+          </p>
+          <p>I javascriptet “omtaler.js” ble det opprettet en klasse for omtaler som har egenskapene navn og innhold. En konstant global array ble deklarert for å holde en rekke slike omtaler, og fem av disse omtalene velges tilfeldig ved hjelp av funksjonen “VisTilfeldigeOmtaler()” som igjen viser dem ved å kalle funksjonen “VisOmtale(omtale)”. Funksjonen “NyOmtale()” kalles når brukeren velger å publisere egen omtale, og gjeldende opplysninger innhentes for så å vises ved hjelp av “VisOmtale(omtale)”.</p>
+
+          <h3>Anders</h3>
+          <p>Lagde en funksjon, totalbelop() som bruker ulike variabler basert  på brukers innputs, og summerer verdiene til et totalbeløp.</p>
+          <h3>Lars</h3>
+          <p>Fullførte minimumskravene for JavaScript først og fremst gjennom implementeringen av modulariteten, via include.js. Sammen med dette følger også active_update.js, navbar.js og footer.js som sørger for henholdsvis å gjøre den aktive siden sin knapp oransje, å animere logoen i navbaren, og gjøre footeren sticky om det ikke er nok innhold til å dytte innholdet ned. I samme ånd lagde Lars en funksjon som legger til en knapp som tar brukeren til toppen av siden ved scrolling. Det er i tillegg laget flere scripts, men dette gikk utover scriptene som dekket minimumskravene, og de kan de eventuelt leses mer om lenger ned i dokumentet.</p>
+
+      </section>
+      <section id="s4">
+        <h2>Modularitet</h2>
+          <p>
+              Vi løste kravet for modularitet gjennom bruk av JavaScript. Modulene vi har på siden er navigasjonsbaren på toppen og footeren i bunnen. Disse elementene er på alle sidene på tvers av nettsiden for å sørge for at brukeren til enhver tid vet hvor hen oppholder seg på siden og enkelt kan navigere dit hen vil. Derfor har vi laget navbaren og footeren én gang, for deretter å gjøre den om til en string som lagres i en JS-const. Denne consten er i et script som setter innholdet i en "div" lik innholdet i consten. Det samme scriptet injiserer både navbar og footer. I tillegg er det et script som går inn og henter ut endelsen på URLen man er inne på, og så setter den aktive sidens navbar-knapp sin klasse til .active, slik at den blir oransje.
+          </p>
+      </section>
+
+      <section id="s5">
+        <h2>What changed?</h2>
+          <h3>Endringer på hjem.html/index.html</h3>
+          <ul>
+            <li>Byttet navn til index.html, da dette er standard måte å navngi et nettsteds startside.</li>
+            <li>La til noen lysegrå sirkulære knapper som kan trykkes for å navigere gjennom slideshowet.</li>
+            <li>Mats tok over ansvaret for Anders, ettersom Mats hadde fått oppgaven å lage “slideshow.js”-scriptet som skulle brukes på forsiden.</li>
+          </ul>
+          <h3>Endringer på style.css:</h3>
+          <ul>
+            <li>Byttet navn til main.css.</li>
+            <li>Overskrifter er byttet fra en helt svart farge til en noe gråere (#6f6f6f), samt at bakgrunn er endret fra helt hvit til en noe gråere (#f8f8f8). Dette er gjort for å gjøre siden mer behagelig å se på etter feedback fra brukertest.</li>
+          </ul>
+          <h3>Endringer på tidskrav:</h3>
+          <ul>
+            <li>Da vi satte tidsfristene litt for tidlig, endret vi på de.og gjorde ferdig nettsiden til den 10 november og brukte helgen etter til å teste på brukere.</li>
+          </ul>
+          <h3>Endringer på navbar.html:</h3>
+          <ul>
+            <li>Vi har gått bort fra å ha navbaren fixed til toppen av siden ved scrolling da dette bød på en hel skare av nye problemer. I tillegg er det ingen av undersidene våre som er spesielt lange, slik at navbaren aldri vil være langt unna uansett, med unntak av bloggen. Fixed navbar er heller erstattet med et script som legger til en ‘opp-pil’ nederst i høyre hjørne når man scroller, som tar deg til toppen av siden.</li>
+            <li>Endret logoen til noe renere og lettere å animere.</li>
+            <li>I tillegg til at døren i logoen åpner seg ved hovring vises det også et hjerte bak døren nå.</li>
+            <li>Gjorde slik at tittelen i navbaren til høyre for logoen forsvinner når vinduet blir for smalt for å vise alt.</li>
+          </ul>
+          <h3>Endringer på footer.html:</h3>
+          <ul>
+            <li>Informasjonen i footer er endret fra å være stablet til å være ved siden av hverandre i et grid-system. Informasjonen blir stablet igjen når siden blir for smal, gjennom media queries.</li>
+            <li>Det er i tillegg lagt til linker i adressen og epostadressen til henholdsvis et google map som er sentrert i adressen og til åpning av enhetens standard mailprogram med epostadressen allerede fylt ut.</li>
+            <li>Det er lagt til en horisontal ruler mellom om den viktige informasjonen og informasjonen i liten skrift for å skille de to og gi footeren en ryddigere layout.</li>
+            <li>Bakgrunnsfargen er endret fra helt svart til en litt gråere, i samsvar med resten av siden, for å gjøre den mer behagelig å se på.</li>
+            <li>Vi har gått bort fra linker til sosiale medier, da siden er fiktiv og de sosiale mediene ikke eksisterer.</li>
+
+          </ul>
+          <h3>Endringer på mer_kontakt.html:</h3>
+          <ul>
+            <li>Vi har skrevet at vi ønsker å unngå skygger i P2, men har valgt å bruke litt hjelp av skygger på ‘mer_kontakt.html’ fordi vi føler det beholder den rene layouten, men fremhever det som er viktig på siden på en god måte. De områdene skyggene er brukt på fremstår som kort som ligger oppå siden hvilket er ganske estetisk i mine øyne.</li>
+            <li>Brukte border rundt skjemafeltene i kontakt oss da det ble penere og mer oversiktlig. Er også informativt fordi omrisset endrer farge etter om input er valid/invalid.</li>
+            <li>Overskriftene i kontaktskjemaet er svarte heller enn oransje fordi det ble for mye oransje og det er mer oversiktlig og informativt med svarte overskrifter.</li>
+          </ul>
+          <h3>Endringer på mer_om_oss.html:</h3>
+          <ul>
+            <li>Endret FAQ-delen til å bli liggende under bildet og “Om Trondheim Youth Hostel”-delen. Dette gjorde at det så mer oversiktlig ut, og et renere look. Det gjør også at spørsmålene kan komme tydeligere frem med større skrift. Valgte også å gi spørsmålene en liten bakgrunnsfarger, med en liten margin som skiller spørsmålene. På den måten kommer hvert spørsmål tydeligere frem.</li>
+            <li>Har også byttet om på bildet og teksten, slik at bildet nå er på høyre mens, teksten er på venstre. Dette er fordi vi etter tilbakemelding fra testere skjønte at det passet bedre overens med resten av siden (spesielt rom.html og mer_om_trondheim.html) og ble mer naturlig at teksten kom først.</li>
+            <li>Har også lagt til et Google kart nederst på siden med en nål over adressen vår for å gjøre det enkelt for folk å finne oss.</li>
+
+          </ul>
+          <h3>Endringer på mer_omtaler.html</h3>
+          <ul>
+            <li>Ansvaret for denne siden ble ikke bestemt i designfasen, men ettersom Mats laget “omtaler.js”-scriptet fikk han også ansvaret for denne siden.</li>
+            <li>Fjernet avrunding av kantene til omtaleboksene.</li>
+            <li>Endret utseendet til publiseringsknappen til å samsvare bedre med resten av nettstedets knapper. Det nye utseendet har oransje bakgrunn og avrundede kanter med hvit tekst.</li>
+            <li>Fjernet svak gradient i underoverskriftenes bakgrunn til utelukkende oransje for å samsvare bedre med resten av nettstedets design.</li>
+            <li>Fjernet lysegrå ramme rundt innholdet i presenterte omtaler.</li>
+          </ul>
+          <h3>Endringer på mer_blog.html:</h3>
+          <ul>
+            <li>Ble veldig lik mockup, la til en introduksjon til bloggen på toppen, da dette ble et gjennomgående designvalg gjennom hele nettsiden, da det ga mer oversikt for besøkende som ville skumme gjennom siden. Strukturen har endret seg litt, og har blitt litt enklere med kun overskrift, deretter bilder og så tekst. Kommentarer ble ikke prioritert og dermed ikke implementert.</li>
+          </ul>
+          <h3>Endringer på mer_om_trondheim.html:</h3>
+          <ul>
+            <li>Endret designet så det lignet mer på rom.html da det føltes mer naturlig å ha en gjennomgående “look” på disse to. Koden ble dermed også mer modulær da de to sidene brukte mye av den samme koden. Valgte dermed å ta det oppdaterte utseendet fra rom som hadde mindre tekst og bilder og en introduksjon på toppen til siden. Noe som gjorde siden litt mer oversiktlig. Link til tilhørende nettsider ble laget på samme måte som i rom.html og er en oransje knapp som linker til eventuelle åpningstider.</li>
+          </ul>
+          <h3>Endringer på rom.html:</h3>
+          <ul>
+            <li>Tittelen på rommet ble sentrert og i samme stil som alle andre sider. La også til en liten “intro” eller “ingress”, som oppsummerer hva rommene har å tilby.</li>
+            <li>En knapp ble lagt til under hvert rom med prisen hvor hver seng. Når denne knappen ble klikket ble du sendt til bestilling og rommet automatisk valgt under skjemaet.</li>
+          </ul>
+          <h3>Endringer på bestilling.html:</h3>
+          <ul>
+            <li>Flere små endringer i forhold til hva slags input felt som skal fylles inn, samt endring i rekkefølge. Har inkludert: Adresse, Postkode, Sted, Valg av rom. Har spleiset Fornavn og Etternavn til Fullt navn. I stedet for valg av to ulike datoer, velger man nå ankomstdato og antall netter, grunnet problemer med js. Fjernet bekreftelse av epost, ettersom vi fant denne unødvendig. Flyttet også totalsummen fra “Betal”-knappen til et eget display høyere opp på siden, for at en kan kunne se summen mens man velger de prisgitte alternativene.</li>
+            <li>Valgte å bruke skygger (se Endringer på mer_kontakt.html). I tillegg har vi valgt å bruke samme stil på disse to sidene.</li>
+            <li>Endring etter brukertest: Byttet fargene på elementet som viser totalsummen da den var vanskelig å lese.</li>
+
+          </ul>
+          <h3>Endringer på bekreftelse.html:</h3>
+          <ul>
+            <li>Lagt til en link som tar brukeren tilbake til index.html.</li>
+            <li>Når bruker blir sendt til bekreftelse tas informasjon angående epost med og presenteres i bekreftelsen.</li>
+
+          </ul>
+          <h3>Forandringer på bilde_edit.js/ thumbnails.js</h3>
+          <ul>
+            <li>Endret navn til thumbnails.js da det virket mer naturlig. Javascripten brukes kun i blog.html, men kan enkelt utvides til andre ved å legge inn scripten og sette alle bilder som skal være thumbnails under klassen “thumbnail”. Alle bildene under klassen thumbnail får en eventlistener som kjører funksjonen on() som skalerer og sentrerer bildet og dimmer bakgrunnen.</li>
+            <li>Mathias tok over ansvaret for denne for Mats.</li>
+          </ul>
+          <h3>Forandringer på faq.js /accordion.js</h3>
+          <ul>
+            <li>Denne har byttet navn til accordion.js fordi dette er et mer beskrivende navn på filen da elementet oppfører seg som et trekkspill.</li>
+            <li>Martin har overtatt denne for Lars, da det var mer naturlig for Martin å ta denne, i og med at Martin lager HTML-filen.</li>
+
+          </ul>
+          <h3>Forandringer på sum.js</h3>
+          <ul>
+            <li>Denne heter nå bestilling.js fordi den tilhørende html-filen heter det.</li>
+            <li>Anders har overtatt denne for Martin, fordi anders jobber på den korresponderende HTML-filen og det ble mer naturlig slik.</li>
+
+          </ul>
+          <h3>Forandringer på logo.js</h3>
+          <ul>
+            <li>Denne har byttet til å hete navbar.js, igjen fordi den tilhørende htmlen heter det.</li>
+            <li>Lars tok over ansvaret for Mats.</li>
+
+          </ul>
+          <h3>Forandringer på anmeldelse.js</h3>
+          <ul>
+            <li>Heter nå omtaler.js siden dette er et mer selvforklarende navn.</li>
+          </ul>
+          <h3>Ny JavaScriptfil active_update.js</h3>
+          <ul>
+            <li>På grunn av at navbaren er importert av et script inn i hver html-side, trenger vi et eget script som sørger for at rett knapp er gjort oransje (.active) for hver side. Dette scriptet sjekker hvilken side man er på, og setter klassen .active på den korresponderende knappen.</li>
+          </ul>
+          <h3>Ny JavaScriptfil form_submit.js</h3>
+          <ul>
+            <li>Dette scriptet er lagt til for å få kontaktskjemaet til å virke som om det faktisk er koblet opp mot en mottaker. Dette scriptet henter inn informasjon fra skjemaet, prosesserer det, for så å generere en respons til brukeren på mottatt henvendelse.</li>
+          </ul>
+          <h3>Ny JavaScriptfil Include.js</h3>
+          <ul>
+            <li>Denne scriptfilen importerer navbaren og footeren inn i alle de andre html-filene for modularitet og enklere vedlikehold av kodebasen.</li>
+          </ul>
+          <h3>Ny JavaScriptfil scroll_to_top.js</h3>
+          <ul>
+            <li>Siden vi har gått bort fra en navbar som er fixed til toppen av siden, har vi heller lagt til en knapp som dukker opp i nedre høyre hjørne når man scroller over navbaren. Dette scriptet gjør at den dukker opp til rett tid og tar brukeren til toppen av siden når man trykker på den.</li>
+          </ul>
+          <h3>Ny JavaScriptfil sign_counter.js</h3>
+          <ul>
+            <li>Et script som fortløpende oppdaterer antallet karakterer man har brukt i tekstfeltet på kontaktskjemaet, slik at man kan følge med på at spørsmålet ikke blir for langt.</li>
+          </ul>
+          <h3>Ny JavaScriptfil map.js</h3>
+          <ul>
+            <li>Scriptet som generer Google Maps-kartet nederst på mer_om_oss.html-siden.</li>
+          </ul>
+          <h3>Ny Javascriptfil bekreftelse.js</h3>
+          <ul>
+            <li>Script som tar inn form-informasjonen fra bestilling.html som sendes dit som en query string på grunn av at method=”get” brukes. Derfra hentes epostadressen som er satt inn og den brukes så på bekreftelsessiden. I tillegg genererer scriptet et tilfeldig ordrenummer som vises til brukeren.</li>
+          </ul>
+          <h3>Fjernet JavaScriptfil sticky.js</h3>
+          <ul>
+            <li>Dette er fordi vi fant ut at det ikke var noe behov for en fixed navbar ved scrolling fordi nesten ingen av våre sider er så lange at toppen av siden blir langt unna, i tillegg til at det ødela navbaren og hadde innebåret veldig mye ekstra hårriving å fikse det. Vi la heller til scroll_to_top.js, beskrevet under.</li>
+          </ul>
+          <h3>Ny JavaScriptfil footer.js</h3>
+          <ul>
+            <li>Scriptet gjør at om det ikke  er nok innhold på en side til å dytte footeren ned til bunnen av siden så limes footeren til bunnen av siden. Den gjør det ved å sammenligne window height og scroll height når siden lastes, men også fortløpende når man endrer størrelsen på vinduet.</li>
+          </ul>
+          <h3>Endringer på filstrukturen</h3>
+          <p>Endringer på root: ny mappe under /img/blog. Da blog inneholder mange bilder som skaper kaos i img mappen, ble de heller lagt i en egen mappe. Den oppdaterte strukturen vises under.
+          </p>
+
+          <ul>
+              <li>css/
+                <ul>
+                  <li>main.css</li>
+                </ul>
+              </li>
+              <li>img/
+                <ul>
+                  <li>blog/
+                  <ul>
+
+                      <li>blog_img1.png</li>
+                      <li>...</li>
+
+                  </ul>
+                  <li>...</li>
+                  <li>bilde.jpg</li>
+                  <li>...</li>
+                </ul>
+              </li>
+              <li>js/
+                <ul>
+                  <li>accordion.js</li>
+                  <li>active_update.js</li>
+                  <li>bekreftelse.js</li>
+                  <li>bestilling.js</li>
+                  <li>footer.js</li>
+                  <li>form_submit.js</li>
+                  <li>include.js</li>
+                  <li>map.js</li>
+                  <li>navbar.js</li>
+                  <li>omtaler.js</li>
+                  <li>scroll_to_top.js</li>
+                  <li>sign_counter.js</li>
+                  <li>slideshow.js</li>
+                  <li>thumbnails.js</li>
+                </ul>
+              </li>
+              <li>bekreftelse.html</li>
+              <li>bestilling.html</li>
+              <li>index.html</li>
+              <li>mer_blog.html</li>
+              <li>mer_kontakt.html</li>
+              <li>mer_om_oss.html</li>
+              <li>mer_om_trondheim.html</li>
+              <li>mer_omtaler.html</li>
+              <li>rom.html</li>
+          </ul>
+
+      </section>
+
+      <section id='s6'>
+        <h2>Endelig arbeidsfordeling</h2>
+<table>
+			<thead>
+				<tr>
+					<th> Filnavn </th>
+					<th> Beskrivelse </th>
+					<th> Hovedansvar </th>
+				</tr>
+
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>index.html</td>
+					<td>Forsiden</td>
+					<td>Mats</td>
+				</tr>
+				<tr>
+					<td>bestilling.html</td>
+					<td>Siden for bestilling av rom.</td>
+					<td>Anders</td>
+				</tr>
+				<tr>
+          <td>bekreftelse.html</td>
+          <td>Bekreftelse på bestilling med detaljer angående valgt bestilling</td>
+          <td>Anders</td>
+        </tr>
+        <tr>
+          <td>rom.html</td>
+          <td>Siden som viser frem rommene våre.</td>
+          <td>Martin</td>
+        </tr>
+        <tr>
+					<td>mer_om_oss.html</td>
+					<td>En side med info om hostellet/FAQ/Google maps.</td>
+					<td>Martin</td>
+				</tr>
+				<tr>
+					<td>mer_kontakt.html</td>
+					<td>Side med kontaktinfo og et skjema for å ta kontakt.</td>
+					<td>Lars</td>
+				</tr>
+        <tr>
+          <td>mer_omtaler.html</td>
+          <td>Side hvor man kan lese og/eller legge inn omtaler av hostellet.</td>
+          <td>Lars</td>
+        </tr>
+        <tr>
+          <td>mer_om_trondheim.html</td>
+					<td>Informasjon om severdigheter og ting man kan gjøre i Trondheim.</td>
+					<td>Mathias</td>
+        </tr>
+				<tr>
+					<td>mer_blogg.html</td>
+					<td>En blogg som Stig Fjell og de andre ansatte oppdaterer når noe skjer rundt hostellet.</td>
+					<td>Mathias</td>
+				</tr>
+				<tr>
+					<td>mer_om_trondheim.html</td>
+					<td>Informasjone om Trondheim som by og hva man kan se</td>
+					<td>Mathias</td>
+				</tr>
+				<tr>
+					<td>navbar.html</td>
+					<td>Navigasjonen på toppen av alle sidene.</td>
+					<td>Lars</td>
+				</tr>
+				<tr>
+					<td>footer.html</td>
+					<td>Footer som bruker på tvers av siden</td>
+					<td>Lars</td>
+				</tr>
+        <tr>
+          <td>main.css</td>
+					<td>Stylesheeten for hele siden</td>
+					<td>Alle</td>
+        </tr>
+        <tr>
+          <td>accordion.js</td>
+					<td>Gjør at svaret til et spørsmål vises når man trykker på spørsmålet under mer_om_oss.html.</td>
+					<td>Martin</td>
+        </tr>
+        <tr>
+          <td>active_update.js</td>
+					<td>Gjør knappen for den gjeldende siden oransje.</td>
+					<td>Lars</td>
+        </tr>
+        <tr>
+          <td>bestilling.js</td>
+					<td>Scriptet som beregner prisen på en bestilling og sender deg videre ved fullført bestilling.</td>
+					<td>Anders</td>
+        </tr>
+        <tr>
+          <td>thumbnails.js</td>
+					<td>Script som forstørrer thumbnails og presenterer dem på et overlay midt i nettleseren</td>
+					<td>Mathias</td>
+        </tr>
+        <tr>
+          <td>form_submit.js</td>
+					<td>Script som behandler informasjonen gitt i kontaktskjemaet og lager en tilpasset respons.</td>
+					<td>Lars</td>
+        </tr>
+        <tr>
+          <td>include.js</td>
+					<td>Injiserer navbar og footer inn i de andre sidene.</td>
+					<td>Lars</td>
+        </tr>
+        <tr>
+          <td>navbar.js</td>
+					<td>Animerer logoen i navbaren, slik at døren åpnes når man hovrer over huset.</td>
+					<td>Lars</td>
+        </tr>
+        <tr>
+          <td>omtaler.js</td>
+					<td>Scriptet som generer omtalene som skal vises på mer_omtaler.html og behandler nye omtaler.</td>
+					<td>Mats</td>
+        </tr>
+        <tr>
+          <td>scroll_to_top.js</td>
+					<td>Script som scroller vinduet til toppen når man trykker på pilen nede i høyre hjørne.</td>
+					<td>Lars</td>
+        </tr>
+        <tr>
+          <td>sign_counter.js</td>
+					<td>Script som teller og informerer bruker om hvor mange karakterer man har brukt og har igjen i textareaen på kontaktsiden.</td>
+					<td>Lars</td>
+        </tr>
+        <tr>
+          <td>slideshow.js</td>
+					<td>Scriptet som sørger for funksjonaliteten til slideshowet på index.html.</td>
+					<td>Mats</td>
+        </tr>
+        <tr>
+          <td>map.js</td>
+					<td>Script som generer et kart på mer_om_oss.html</td>
+					<td>Martin</td>
+        </tr>
+        <tr>
+          <td>footer.js</td>
+					<td>Gjør footeren fast på bunnen av siden om det ikke er nok innhold til å dytte den ned.</td>
+					<td>Lars</td>
+        </tr>
+        <tr>
+          <td>bekreftelse.js</td>
+					<td>Script som gjør at ordrenummer er et tilfeldig tall og epostadressen som vises på bekreftelse.html er hentet fra bestillingsskjemaet.</td>
+					<td>Anders</td>
+        </tr>
+        <tr>
+          <td>house_open.png/house_closed.png</td>
+					<td>Logoene i navbaren, laget i Photoshop.</td>
+					<td>Lars</td>
+        </tr>
+        <tr>
+          <td>up_arrow.ico</td>
+					<td>Pilen som dukker opp i nedre høyre hjørne ved scrolling, laget i Photoshop.</td>
+					<td>Lars</td>
+        </tr>
+			</tbody>
+
+		</table>
+
+
+      </section>
+    <footer>
+        Anders, Lars, Martin, Mathias, Mats
+    </footer>
+  </article>
+  <script src="js/main.js"></script>
+  </body>
+</html>

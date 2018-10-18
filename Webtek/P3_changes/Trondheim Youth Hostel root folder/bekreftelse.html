@@ -1,0 +1,43 @@
+<!--
+FILE NAME: bestilling.html
+WRITTEN BY: Anders Bergesen
+WHEN:  6.11
+PURPOSE: payment confirmation -->
+
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8">
+    <!-- Import the stylesheet and the favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Bekreftelse</title>
+  </head>
+  <body>
+
+    <!-- Placeholder for navigation bar with a message if something breaks -->
+    <div id="navbar_content">En feil har skjedd, vennligst last inn siden på nytt.</div>
+
+    <!-- Confirmation message -->
+    <div class="container" style="margin-bottom:400px">
+      <h1>Din bestilling har blitt mottatt!</h1>
+      <p>Din betaling har blitt registrert med referansenummer <span id="referansenummer">12345678</span>. Du har fått en kvittering tilsent på <span id="email">example@email.com</span>.<br><br> Takk for at du valgte oss!</p>
+      <!-- A link to take the user back to the main page -->
+      <a id= "tlbake_til_index" href= "index.html">Tilbake til hovedsiden</a>
+    </div>
+
+    <!-- Placeholder for footer -->
+    <div id="footer_content"></div>
+
+    <!-- Create the image button for scrolling to the top -->
+    <img src="img/up_arrow.ico" onclick="topFunction()" id="top-button" alt="Top-button">
+
+    <!-- Import the scripts for module includes and functionality -->
+    <script src="js/include.js"></script>
+    <script src="js/scroll_to_top.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/active_update.js"></script>
+    <script src="js/bekreftelse.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

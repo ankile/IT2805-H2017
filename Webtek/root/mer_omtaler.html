@@ -1,0 +1,59 @@
+<!--
+FILE NAME: index.html
+WRITTEN BY: Mats Kvelland
+WHEN: Novemvber 2017
+PURPOSE: Home page for the website. -->
+
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8">
+    <!-- Import the stylesheet and the favicon. -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css">
+    <title>Omtaler</title>
+  </head>
+
+  <body>
+    <!-- Placeholder for navigation bar with a message if something breaks -->
+    <div id="navbar_content">En feil i lastingen av navigasjonen har forekommet, last siden på nytt.</div>
+
+    <!-- Container div used to center content. -->
+    <div class="container auto-margin" >
+      <h1 class="header center">Omtaler</h1>
+
+      <!-- Div dedicated for the creation of a new review. -->
+      <div class="card auto-margin">
+        <h2 class="omtaleHeader">Skriv din egen omtale:</h2>
+        <div id="omtaleContainer">
+          <!-- Textarea where user writes the content of a new review. -->
+          <textarea id="txtInnhold" class="omtaleInput" rows="8" cols="80" placeholder="Skriv omtale her"></textarea>
+
+          <!-- Text input where user can specify their name. -->
+          <label for="txtNavn">Oppgi navn: </label>
+          <input type="text" id="txtNavn" class="omtaleInput" placeholder="Ditt fulle navn">
+
+          <!-- Button for displaying their written review. -->
+          <input id="btnPubliser" type="button" value="Publiser">
+        </div>
+      </div>
+      <br>
+      <!-- Container div dedicated for displaying random reviews. -->
+      <div id="divOmtaler"></div>
+    </div>
+
+    <!-- Create the image button for scrolling to the top -->
+    <img src="img/up_arrow.ico" onclick="topFunction()" id="top-button" alt="Top-button">
+
+    <!-- Placeholder for footer -->
+    <div id="footer_content"></div>
+
+    <!-- Importerer scriptene -->
+    <script src="js/omtaler.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/scroll_to_top.js"></script>
+    <script src="js/active_update.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

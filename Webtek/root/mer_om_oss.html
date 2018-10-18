@@ -1,0 +1,88 @@
+<!--
+FILENAME: mer_om_oss.html
+WRITTEN BY: Martin Egeli
+WHEN: November 2017
+PURPOSE: This page is supposed to give a short introduction to what our hostel is and
+where it is situated, in addition to a little more information.
+There's also a FAQ section to try to answer some common questions, so users
+don't necessarily need to contact the hostel for every question. -->
+
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8">
+    <title>Mer om oss</title>
+    <!-- Import the stylesheet and the favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+
+    <!-- Placeholder for navigation bar with a message if something breaks -->
+    <div id="navbar_content">En feil har skjedd, vennligst last inn siden på nytt.</div>
+
+    <!-- Container for the content -->
+    <div class="auto-margin main-content">
+      <div class="OmOss col-6">
+
+        <!-- Description of the hostel up top -->
+        <h2 class="header">OM TRONDHEIM YOUTH HOSTEL</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+
+      <!-- A picture to make the site look more attractive -->
+      <div class="picture col-6">
+        <img id="om-oss-img" src="img/om_oss.png" alt=""> <!-- I don't use the alt-attribute here, because if the image doesn't load we dont want it to show anything at all. -->
+      </div>
+
+      <!--  This part answers some frequently asked questions -->
+      <div class="questions">
+        <h2 class="header">OFTE STILTE SPØRSMÅL</h2>
+
+        <!-- This accordion effect was inspired by a w3.schools tutorial -->
+        <button class="accordion">Ligger dere nærme sentrum?</button>
+        <div class="svar">
+          <p>Vi ligger i gangavstand fra sentrum, og svært nærme Samfundet som er studentenes møtested. Om man ikke liker å gå i 10 minutter er det fullt mulig med bussforbindelser nærmest like utenfor døra.</p>
+        </div>
+
+        <button class="accordion">Hvordan er deres vanlige gjester?</button>
+        <div class="svar">
+          <p>Som de fleste steder som leier ut har vi et svært variert besøk, men vi henvender oss i stor grad til unge mennesker som ønsker å besøke nye steder og oppleve Trondheim. </p>
+        </div>
+
+        <button class="accordion">Skjer det mye spennende i Trondheim?</button>
+        <div class="svar">
+          <p>Det skjer absolutt mye spennende i Trondheim! For å følge med på hva du kan oppleve når du selv er i Trondheim kan denne linken brukes: <a href="https://www.trondheim.no/hva-skjer-i-trondheim" target="_blank">"Hva skjer i Trondheim?"</a></p>
+        </div>
+
+        <button class="accordion">Rengjør dere rommene selv?</button>
+        <div class="svar">
+          <p>Det legges ved en avgift på 200kr ved utreise om du ikke ønsker å rengjøre rommene selv.</p>
+        </div>
+      </div>
+      
+      <!--  The google maps function to show where the hostel is to find -->
+      <h2 class="header">Hvor er vi å finne?</h2>
+      <div id="map" class="auto-margin"></div>
+
+    </div>
+    <!-- End of container -->
+
+    <!-- Placeholder for footer -->
+    <div id="footer_content"></div>
+
+    <!-- Create the image button for scrolling to the top -->
+    <img src="img/up_arrow.ico" onclick="topFunction()" id="top-button" alt="Top-button">
+
+    <!-- Import the scripts for module includes and functionality -->
+    <script src="js/include.js"></script>
+    <script src="js/scroll_to_top.js"></script>
+    <script src="js/active_update.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/accordion.js"></script>
+
+    <!-- Scripts for the Google map -->
+    <script src="js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDadNnPFhPOzk9U0g-KdY4s7Y8TLxnn6TA&callback=genererKart"></script>
+  </body>
+</html>

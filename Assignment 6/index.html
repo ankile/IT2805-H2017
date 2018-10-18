@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax form</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+      <div class="container" id="form-div">
+
+        <form action="http://folk.ntnu.no/michaedm/norwegian-tax-administration/receive.php" method="post">
+
+          <legend>Your Tax Returns</legend>
+          <p><em>Please fill out everything in this form before submitting</em></p>
+
+          <div class="row" style="margin-top:15px">
+
+            <div class="col-3"><label for="name">Real Name</label></div>
+            <div class="col-9"><input id="name" autofocus required type="text" name="name" placeholder="Your Real Name"></div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-3"><label for="gender">Gender</label></div>
+            <div class="col-9"><input id="gender" required type="radio" name="gender" value="male">Male <input type="radio" name="gender" value="female" style="margin-left:7px">Female</div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-3"><label for="email">E-mail Address</label></div>
+            <div class="col-9"><input id="email" required type="email" name="email" placeholder="Your E-mail Address"></div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-3"><label for="birthdate">Birthdate</label></div>
+            <div class="col-9"><input id="birthdate" required type="date" name="birthdate" placeholder="DD.MM.YYYY" max="1987-12-31"></div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-3"><label for="hero">Hero Name</label></div>
+            <div class="col-9"><input id="hero" required type="text" name="hero" placeholder="Your Hero Name"></div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-3"><label for="spandex">Do you wear spandex?</label></div>
+            <div class="col-9"><input id="spandex" type="checkbox" name="spandex" value="True">Yes</div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-3"><label for="strength">Strength</label></div>
+            <div class="col-9"><select id="strength" name="strength">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select></div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-3"><label for="speed">Speed</label></div>
+            <div class="col-9"><select id="speed" name="speed">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select></div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-3"><label for="intelligence">Intelligence</label></div>
+            <div class="col-9"><select id="intelligence" name="intelligence">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select></div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-3"><label for="income">Income</label></div>
+            <div class="col-9"><input id="income" required type="number" min="0" name="income" placeholder="Income in NOK">NOK</div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-3"><label for="wealth">Wealth</label></div>
+            <div class="col-9"><input id="wealth" required type="number" name="wealth" min="0" placeholder="Wealth in NOK">NOK</div>
+
+          </div>
+          <div class="row">
+
+            <div class="col-3"><label for="tax">Tax</label></div>
+            <div class="col-9"><input id="tax" disabled type="number" name="tax" placeholder="Your Tax in NOK">NOK</div>
+
+          </div>
+
+          <input class="left" type="submit" name="submit" value="Submit tax form" style="margin-top:20px;">
+
+
+
+        </form>
+      <script type="text/javascript" src="js/tax.js">
+
+      </script>
+    </body>
+</html>
